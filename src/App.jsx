@@ -1,17 +1,13 @@
 import { Route, Routes } from "react-router-dom";
-import Home from "./components/Home";
-import Conocenos from "./components/Conocenos";
-import Producto from "./components/Producto";
+
+import Header from "./components/Header";
+import Main from "./components/Main";
 
 function App() {
   return (
     <>
-      <h1 className="text-center text-3xl">COMPONENTE APP</h1>
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/conocenos" element={<Conocenos />} />
-        <Route path="/producto/:id" element={<Producto />} />
-      </Routes>
+      <Header />
+      <Main />
       <p className="mt-4">Fin de rutas</p>
     </>
   );

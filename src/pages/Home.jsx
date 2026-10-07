@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import Producto from "./Producto";
+import ProductoCard from "../components/ProductoCard";
 
 const Home = () => {
   const [data, setData] = useState([]);
@@ -28,8 +29,10 @@ const Home = () => {
     <div>
       <h1>Pagina principal</h1>
       {data?.map((p) => (
-        <div key={p.id}>
-          <Link to={`/producto/${p.id}`}>{p.title}</Link>
+        <div key={p.id} className="flex">
+          <Link to={`/producto/${p.id}`}>
+            <ProductoCard titulo={p.title} precio={p.price} />{" "}
+          </Link>
         </div>
       ))}
     </div>
